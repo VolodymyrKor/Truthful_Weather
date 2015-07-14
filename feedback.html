@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Зв'язок з адміністарцією</title>
+    </head>
+    <body>
+        <img src="images/title_back.jpg" align="center" alt="Weather on all week" width="1565" height="200"/>
+        <form method="POST" name="feedback">
+            <fieldset>
+                <legend>Ввід особистих даних</legend>
+                <p title="Бажано вводити кирилицею.">
+                    <strong>
+                        <label for="iname">Введіть Ваше ім'я: (максимальна кількість символів - 10) </label>
+                        <input type="text" name="name" size="15" maxlength="10" id="iname" required/>
+                    </strong>
+                </p>
+                <p title="Бажано вводити кирилицею.">
+                    <strong>
+                        <label for="fname">Введіть по-батькові: (максимальна кількість символів - 15) </label>
+                        <input type="text" name="name" size="15" maxlength="15" id="fname" required/>
+                    </strong>
+                </p>
+                <p title="Вводити повністю(не забувайте @).">
+                    <label for="ename">Введіть e-mail: </label>
+                    <input type="text" name="name" size="15" maxlength="20" id="ename" pattern="[A-Za-z0-9]{2,}@[a-z]{2,6}\.[a-z]{2,7}" required/>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Міні-опитування</legend>
+                <p>
+                    <label for="hmvisit">Скільки раз на тиждень ви відвідуєте наш сайт?</label>
+                    <select id="hmvisit">
+                        <option>1-5</option>
+                        <option selected>6-10</option>
+                        <option>11-15</option>
+                        <option>16+</option>
+                    </select>
+                </p>
+                <p>
+                    <p>Вам подобається оформлення сайту?</p>
+                    <label>Так
+                        <input type="radio" name="visit" value="yes" checked>
+                    </label>
+                    <label> Ні
+                        <input type="radio" name="visit" value="no">
+                    </label>
+                </p>
+                <p>
+                    <p>З яких пристроїв відвідуєте наш сайт?</p>
+                    <label>
+                        <input type="checkbox" name="PC" checked>
+                        Настільний ПК/Ноутбук
+                    </label>
+                    <label>
+                        <input type="checkbox" name="PT" >
+                        Планшет
+                    </label>
+                    <label>
+                        <input type="checkbox" name="SF" >
+                        Смартфон
+                    </label>
+                    <label>
+                        <input type="checkbox" name="IP" >
+                        IPhone
+                    </label>
+                </p>
+                <p>
+                    <p>Бажаєте взяти участь у покращенні сайту?</p>
+                    <label>Так
+                        <input type="radio" name="upgrade" value="yes">
+                    </label>
+                    <label> Ні
+                        <input type="radio" name="upgrade" value="no" checked>
+                    </label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <p>Залиште свій коментар будь-ласка:</p>
+                <p>
+                    <textarea name="text" cols="40" rows="6" id="text" required >Введіть коментар...</textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Відправити">
+                </p>
+            </fieldset>
+        </form>
+    </body>
+</html>
