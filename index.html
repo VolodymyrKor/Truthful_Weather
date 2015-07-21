@@ -1,30 +1,203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>True weather</title>
+        <meta charset="utf-8">
+        <title>transition</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+        <script src="js/jquery-2.1.4.min.js" ></script>
+        <script src="js/header.js"  charset="utf-8"></script>
+        <!--<script src="js/header12.js"></script>-->
     </head>
     <body>
-        <img src="images/Title2.jpg" align="center" alt="The key to success - the knowledge of weather" width="1565" height="200"/>
-        <table border="0" width="1565" align="center">
-            <tr>
-                <th>
-                    <img src="images/days_of_the_week.jpg" align="center" alt="The days of the week" width="447" height="447" usemap="#everyDay" />
-                    <map id="everyDay" name="everyDay">
-                        <area href="weather/monday.html" target="_blank" title="Погода на понеділок" shape="poly" coords="82,49,133,150,204,167,234,15,148,7" />
-                        <area href="weather/tuesday.html" target="_blank" title="Погода на вівторок" shape="poly" coords="244,25,221,171,291,210,307,170,407,105,344,42" />
-                        <area href="weather/wednesday.html" target="_blank" title="Погода на середу" shape="poly" coords="310,270,435,287,441,168,409,108,307,174,289,234" />
-                        <area href="weather/thursday.html" target="_blank" title="Погода на четвер" shape="poly" coords="302,446,265,314,303,270,440,292,415,395,373,439" />
-                        <area href="weather/friday.html" target="_blank" title="Погода на пятницю" shape="poly" coords="124,445,172,315,263,314,296,441" />
-                        <area href="weather/saturday.html" target="_blank" title="Погода на суботу" shape="poly" coords="128,260,2,266,12,339,46,401,93,440,167,313" />
-                        <area href="weather/sunday.html" target="_blank" title="Погода на неділю" shape="poly" coords="72,55,132,153,128,258,0,263,0,133" />
-                    </map>
-                </th>
-                <th>
-                    <a href="weather/all_week.html" target="_blank"> <img src="images/all_week.jpg" align="center" alt="All week" title="Погода на весь тиждень" width="500" height="355" /></a>
-                </th>
-            </tr>
-        </table>
-        <br/> <br/> <br/> <br/> <br/> <br/> <hr/> <p align="right"><em>Залишити відклик про сайт можна <a href="feedback.html" title="Тицьни і розкажи, який класний сайт;)" target="_blank">ТУТ </a></em></p>
-</body>
+        <div id="wrapper">
+            <header>
+               <!-- <img src="images/sun.jpg" alt="sun" height="1287" width="1417">-->
+                <img id="ht" src="images/header_title.png" alt="The key to success - the knowledge of weather" width="1000" height="97">
+                <!--<form id="authorisation">
+                    <p class="author">
+                        <label>Логін:
+                            <input />
+                        </label>
+                    </p>
+                    <p class="author">
+                        <label>Пароль:
+                            <input />
+                        </label>
+                    </p>
+                    <p>
+                        <button>Увійти</button>
+                        <button>Зареєструватись</button>
+                    </p>
+                </form>-->
+            </header>
+
+                <div id="side1">
+                    <table class="tabler">
+                        <tr>
+                            <th rowspan="8" id="plas" class="tablerT">Увесь тиждень</th>
+                            <th class="firstCol tablerT">День</th>
+                            <th class="secondCol tablerT">Погода</th>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Понеділок</td>
+                            <td class="tablerT">Хороша</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Вівторок</td>
+                            <td class="tablerT">Така собі</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Середа</td>
+                            <td class="tablerT">Просто шик</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Четвер</td>
+                            <td class="tablerT">Дощ</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">П'ятниця</td>
+                            <td class="tablerT">СИЛЬНИЙ дощ</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Субота</td>
+                            <td class="tablerT">Сонечко і хмарки</td>
+                        </tr>
+                        <tr>
+                            <td class="tablerT">Неділя</td>
+                            <td class="tablerT">Жара!</td>
+                        </tr>
+                    </table>
+                </div>
+
+            <div id="side2">
+                <div id="wrapForm">
+                    <form method="post" name="feedback" id="feedbackForm">
+                        <div>
+                            <label for="nickname" class="str tp">Ваше ім'я</label>
+                        </div>
+                        <div>
+                            <input type="text" id="nickname" class="tp" name="nickname">
+                        </div>
+                        <div>
+                            <label for="user-email" class="str tp">Ваш e-mail</label>
+                        </div>
+                        <div>
+                            <input type="email" class="str tp" id="user-email" name="user-email">
+                        </div>
+                        <div>
+                            <label for="content" class="str tp">Коментар:</label>
+                        </div>
+                        <div>
+                            <textarea rows="10" cols="35" id="content"  name="content" ></textarea>
+                        </div>
+                        <div>
+                            <button class="button" type="button">Відправити</button>
+                        </div>
+                    </form>
+                </div>
+                <img id="feedback" src="images/feedback.png" height="270" width="107" alt="feedback" />
+            </div>
+            <div id="slwrap">
+            <div class="viewport">
+                <ul class="slidewrapper">
+                    <li class="slide">
+                        <table class="dayTable">
+                            <tr class="frow">
+                                <th width="300"></th>
+                                <th width="300"><!--Day, Date, Time, City-->
+                                    <table class="inf">
+                                        <tr>
+                                            <th height="125" width="85" class="cityName">Місто</th>
+                                            <th height="125" width="200" class="time">Година</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="countr">Country</td>
+                                            <td id="datatod">День</td>
+                                        </tr>
+                                    </table>
+                                </th>
+                            </tr>
+                            <tr class="srow">
+                                <td>
+                                    <table class="smtable">
+                                        <tr>
+                                            <th align="center">Година</th>
+                                            <th align="center">Температура</th>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">00:00</td>
+                                            <td align="center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">06:00</td>
+                                            <td align="center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">12:00</td>
+                                            <td align="center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">18:00</td>
+                                            <td align="center"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>Tomorrow, after tomorrow</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!--<li class="slide second">
+                        Slide 2
+                    </li>
+                    <li class="slide third">
+                        Slide 3
+                    </li>-->
+                </ul>
+                <div class="navig" id="rnav">
+                    <a href="#" id="next_slide" class="arrows"><!--→-->></a>
+                    <br/>
+                </div>
+                <div class="navig" id="lnav">
+                    <a href="#" id="prev_slide" class="arrows"><!--←--><</a>
+                </div>
+                <table class="add_char">
+                    <tr>
+                        <th width="190">Характеристика</th>
+                        <th width="100">Значення</th>
+                    </tr>
+                    <tr>
+                        <td>Мінімальна температура</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Максимальна температура</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Тиск</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Вологість</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Хмарність, %</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Швидкість вітру</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Напрям вітру</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <img id="add_atr" src="images/add_at.png" />
+            </div>
+            </div>
+        </div>
+    </body>
 </html>
